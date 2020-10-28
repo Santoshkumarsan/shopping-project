@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Mobile Application HTML5 Template">
     <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
-    <title>{%block title_block%}{%endblock%}</title>
+    <title>dvdv</title>
     <link rel="shortcut icon" href="{%static 'pkseneterpriselogo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{%static 'css/maicons.css'%}">
     <link rel="stylesheet" href="{%static 'vendor/animate/animate.css'%}">
@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container">
-            <a class="navbar-brand" href="/home">
+            <a class="navbar-brand" href="/">
                 <img src="{%static 'pkseneterpriselogo.png'%}" alt="" width="40">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
                     <li class="nav-item dropdown active">
-                        <a class="nav-link " href="/home" id="navbarDropdown">Home</a>
+                        <a class="nav-link " href="/" id="navbarDropdown">Home</a>
 
                     </li>
                     <li class="nav-item">
@@ -49,9 +49,16 @@
                 </div>-->
             </div>
         </div>
-    </nav>
-    {%block content%}{%endblock%}
-    <div class="page-footer-section bg-dark fg-white ">
+    </nav><br>
+    <div style="margin-top:7vh;" align="center">
+        <h5>Log in to order your product</h5>
+        <form method="post">{{form.as_p}}{%csrf_token%}
+            <button type="submit " class="btn btn-success btn-sm">Login</button>
+        </form>
+    </div>
+
+
+    <div class="page-footer-section bg-dark fg-white " style="margin-top: 15vh;">
         <div class="container ">
             <div class="row mb-5 py-3 ">
                 <div class="col-sm-6 col-lg-2 py-3 ">
@@ -111,9 +118,10 @@
         <div class="container ">
             <div class="row ">
                 <div class="col-12 col-md-6 py-2 ">
-                    <img src="{%static 'favicon-light.png' %}" alt="" width="40">
+                    <img src="{%static 'pkseneterpriselogo.png' %}" alt="" width="40">
                     <!-- Please don' t remove or modify the credits below -->
-                    <p class="d-inline-block ml-2">Copyright &copy; <a href="https://www.macodeid.com/" class="fg-white fw-medium">MACode ID</a>. All rights reserved</p>
+                    <p class="d-inline-block ml-2">Copyright &copy;
+                        <a href="https://www.pksenterprise.com/" class="fg-white fw-medium">pksenterprise</a>. All rights reserved</p>
                 </div>
                 <div class="col-12 col-md-6 py-2">
                     <ul class="nav justify-content-end">
