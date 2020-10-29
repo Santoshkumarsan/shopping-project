@@ -10,7 +10,7 @@ def main_view(request):
 def main_view2(request):
     
     return render(request, 'printapp/index-2.html')
-@login_required
+
 def stamps_view(request):
     product=stamp.objects.all()
    

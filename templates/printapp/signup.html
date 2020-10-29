@@ -8,12 +8,14 @@
             <li class="breadcrumb-item active" aria-current="page">Signup</li>
         </ol>
     </nav>
-    <div style="padding:2% 14%">
+    <div style="padding:0% 10%;margin-top:10vh;">
         <form method="post">{{form.as_p}}{%csrf_token%}
 
-            <button type="submit" class="btn btn-success btn-sm">Signup</button> </form>
+            <div class="container">
+                <button type="submit" class="btn btn-success btn-sm">Signup</button> </form>
+        </div>
         <br>
-        <h6><em>If you are a existing user then, </em>&nbsp;<a href="/accounts/login/"><button class="btn btn-primary btn-sm rounded-pill">Log In</button></h6></a>
+        <h6><em>*If you are a existing user then, </em>&nbsp;<a href="/accounts/login/"><button class="btn btn-primary btn-sm rounded-pill">Log In</button></h6></a>
     </div>
 </div>
 {%endblock%}

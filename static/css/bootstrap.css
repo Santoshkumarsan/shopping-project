@@ -4706,7 +4706,7 @@ input[type="button"].btn-block {
     color: #fff;
 }
 
-.card {
+.carde {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4739,13 +4739,13 @@ input[type="button"].btn-block {
     border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card-body {
+.card-bodye {
     flex: 1 1 auto;
     margin-top: 10px;
     min-height: 1px;
 }
 
-.card-title {
+.card-titlee {
     margin-bottom: 0.75rem;
 }
 

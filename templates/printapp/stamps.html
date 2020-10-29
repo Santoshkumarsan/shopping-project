@@ -5,7 +5,7 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/#shopping">Home</a></li> &nbsp;
+            <li class="breadcrumb-item"><a href="/home/#shopping">Home</a></li> &nbsp;
 
             <li class="breadcrumb-item active" aria-current="page">Stamps</li>
         </ol>
@@ -13,10 +13,10 @@
     <div class="row row-cols-2 row-cols-md-5" style="margin-top:40px ; margin-bottom:40px ">
         {%if product%}{%for p in product%}
         <div class="col mb-4">
-            <div class="card h-100">
+            <div class="carde h-100">
                 <img src="{{p.productimage.url}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{p.name}}</h5>
+                <div class="card-bodye">
+                    <h5 class="card-titlee">{{p.name}}</h5>
                     <p class="card-text">{{p.price}}</p>
                 </div>
             </div>
