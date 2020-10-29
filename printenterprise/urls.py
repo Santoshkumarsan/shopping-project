@@ -26,6 +26,7 @@ urlpatterns = [
     path('stamp/',views.stamps_view),
     path('contact/',views.contact_us_view),
     path('about/',views.about_us_view),
+    path('signup/', views.signup_view), 
     path('accounts/',include('django.contrib.auth.urls')), 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 

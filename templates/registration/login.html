@@ -7,21 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Mobile Application HTML5 Template">
     <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
-    <title>dvdv</title>
+    <title>{%block titleblock%}login pksenterprise{%endblock%}</title>
     <link rel="shortcut icon" href="{%static 'pkseneterpriselogo.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="{%static 'css/maicons.css'%}">
     <link rel="stylesheet" href="{%static 'vendor/animate/animate.css'%}">
     <link rel="stylesheet" href="{%static 'vendor/owl-carousel/css/owl.carousel.min.css'%}">
     <link rel="stylesheet" href="{%static 'css/bootstrap.css'%}">
     <link rel="stylesheet" href="{%static 'css/mobster.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light " style="margin-top:19px;">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{%static 'pkseneterpriselogo.png'%}" alt="" width="40">
+                <img src="{%static 'pkseneterpriselogo.png'%}" alt="" style="width:60px; border-radius:3px">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -49,6 +50,13 @@
                 </div>-->
             </div>
         </div>
+    </nav> {%block content%}
+    <nav aria-label="breadcrumb" style="margin-top:4vh;">
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item"><a href="/">Home</a></li> &nbsp;
+
+            <li class="breadcrumb-item active" aria-current="page">Login</li>
+        </ol>
     </nav><br>
     <div style="margin-top:7vh;" align="center">
         <h5>Log in to order your product</h5>
@@ -56,7 +64,7 @@
             <button type="submit " class="btn btn-success btn-sm">Login</button>
         </form>
     </div>
-
+    {%endblock%}
 
     <div class="page-footer-section bg-dark fg-white " style="margin-top: 15vh;">
         <div class="container ">

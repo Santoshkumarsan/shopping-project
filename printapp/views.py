@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponseRedirect
 from .models import stamp,Contactform
 from django.contrib.auth.decorators import login_required 
-
+from .forms import SignUpForm
 # Create your views here.
 def main_view(request):
     
@@ -37,3 +37,16 @@ def about_us_view(request):
 def logout_view(request):
 
      return render(request,'printapp/logout.html') 
+
+
+def signup_view(request):
+    form=SignUpForm()
+    if request.method=='POST':
+        form=SignUpForm(request.POST)
+        user=form.save()
+        user.set_password(user.password)
+        user.save()
+        return HttpResponseRedirect('/accounts/login')
+    return render(request,'printapp/signup.html',{'form':form}) 
+
+ 

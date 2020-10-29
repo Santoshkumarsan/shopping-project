@@ -12,7 +12,7 @@ class stamp(models.Model):
         return self.name
 
 class Contactform(models.Model):
-    fullname=models.CharField(max_length=64,default="dgdd")
+    fullname=models.CharField(max_length=64,default="")
     email=models.EmailField()
     phone=models.CharField(max_length=64)
     message=models.TextField()
