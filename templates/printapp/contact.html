@@ -111,32 +111,32 @@
                     <div class="col-xs-6 col-md-6 col-lg-5 my-3 wow fadeInUp">
                         <div class="card-page">
                             <h3 class="fw-normal">Get in touch</h3>
-                            <form method="POST" class="mt-3">{%csrf_token%}
+                            <form method="POST" class="mt-3">
                                 <div class="form-group">
                                     <label for="fullname" class="fw-medium fg-grey">Fullname</label>
-                                    <input type="text" class="form-control" id="fulname">
+                                    <input type="text" class="form-control" id="fulname" name="fullname">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email" class="fw-medium fg-grey">Email</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <input type="text" class="form-control" id="email" name="email">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone" class="fw-medium fg-grey">Phone(optional)</label>
-                                    <input type="number" class="form-control" id="phone">
+                                    <input type="number" class="form-control" id="phone" name="phone">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="message" class="fw-medium fg-grey">Message</label>
-                                    <textarea rows="6" class="form-control" id="message"></textarea>
+                                    <textarea rows="6" class="form-control" id="message" name="message"></textarea>
                                 </div>
 
                                 <p>*Your information will never be shared with any third party.</p>
 
                                 <div class="form-group mt-4">
                                     <button type="submit" class="btn btn-primary">Send Message</button>
-                                </div>
+                                </div>{% csrf_token %}
                             </form>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6 py-2">
-                    <img src="../assets/favicon-light.png" alt="" width="40">
+                    <img src="{%static 'pkseneterpriselogo.png'%}" alt="" width="40">
                     <!-- Please don't remove or modify the credits below -->
                     <p class="d-inline-block ml-2">Copyright &copy; <a href="https://www.macodeid.com/" class="fg-white fw-medium">MACode ID</a>. All rights reserved</p>
                 </div>

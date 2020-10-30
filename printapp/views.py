@@ -25,6 +25,7 @@ def contact_us_view(request):
         message=request.POST.get('message','')
         contact=Contactform(fullname=fullname,email=email,phone=phone,message=message)
         contact.save()
+        return HttpResponseRedirect('/contact')
 
     return render(request, 'printapp/contact.html')
 
@@ -49,4 +50,3 @@ def signup_view(request):
         return HttpResponseRedirect('/accounts/login')
     return render(request,'printapp/signup.html',{'form':form}) 
 
- 
