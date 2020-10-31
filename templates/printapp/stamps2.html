@@ -1,9 +1,7 @@
 {%extends 'printapp/base.html'%}
-<!DOCTYPE html> {%load static%}{%block title_block%}PK chitrography{%endblock%} {%block auth%}
+<!DOCTYPE html> {%load static%}{%block title_block%}PK chitrography{%endblock%}{%block auth%}
 <div class="ml-auto my-2 my-lg-0">
-    <a href="/accounts/login/"><button class="btn btn-dark rounded-pill">Log In</button></a>
-    <a href="/#shopping"><button class="btn btn-dark rounded-pill">Sign Up</button></a>
-
+    <a href="/accounts/logout/"><button class="btn btn-dark btn-sm rounded-pill">Logout</button></a>
 </div>
 {%endblock%} {%block content%} <br>
 
@@ -11,7 +9,7 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/home/#shopping">Home</a></li> &nbsp;
+            <li class="breadcrumb-item"><a href="/#shopping">Home</a></li> &nbsp;
 
             <li class="breadcrumb-item active" aria-current="page">Stamps</li>
         </ol>

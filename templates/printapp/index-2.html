@@ -14,7 +14,7 @@
 
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact</a>
+            <a class="nav-link" href="/contactus">Contact</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
@@ -27,5 +27,62 @@
 
     </div>
 </div>
+</div>
 
+</nav>
+
+<div class="page-hero-section bg-image hero-home-1" style="background-image: url({%static 'img/bg_hero_1.svg' %});">
+
+    <div class="hero-caption pt-5">
+        <div class="container h-100">
+            <div class="row align-items-center h-100">
+                <div class="col-lg-6 wow fadeInUp">
+                    <div class="badge mb-2"><span class="icon mr-1"><span class="mai-globe"></span></span> #2 Editor Choice of 2020</div>
+                    <h1 class="mb-4">Manage your Print Easier</h1>
+                    <p class="mb-4">pksenterprise has features to view and manage <br> your prints, such as Stamps,Bills and T-shirts.</p>
+                    <a href="#shopping" class="btn btn-success rounded-pill">Order Now</a>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block wow zoomIn">
+                    <div class="img-place mobile-preview shadow floating-animate">
+                        <img src="{%static 'img/clients/t-shirt.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="shopping" class="container">
+
+    <div class="card-deck row row-cols-2 row-cols-md-4" style="margin-top: 90px; ">
+
+
+
+
+        <div class="card col col-lg-3 col-sm-3 col-xs-3 " style="margin-top: 20px;">
+            <div class="card-body ">
+                <a href="/stamp2"> <img src="{%static 'img\clients\hand_stamp.jpg'%}  " class="card-img-top " alt="... ">
+
+                    <div class="card-footer ">
+
+                        <h5 class="card-title ">Stamps</h5>
+                        <small class="text-muted "> &nbsp;&nbsp;Rs: 150-500</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="card col col-lg-3 col-sm-3 col-xs-3" style="margin-top: 20px;">
+            <div class="card-body ">
+                <a href="/T-shirts"> <img src="{%static 'img\clients\t-shirts.png'%}  " class="card-img-top " alt="... ">
+
+                    <div class="card-footer ">
+
+                        <h5 class="card-title ">Printed T-shirts</h5>
+                        <small class="text-muted "> &nbsp;&nbsp;Rs: 200-1000</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 {%endblock%}

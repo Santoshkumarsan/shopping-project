@@ -16,7 +16,11 @@ def stamps_view(request):
    
 
     return render(request, 'printapp/stamps.html',{'product':product})
+def stamps_view_2(request):
+    product=stamp.objects.all()
+   
 
+    return render(request, 'printapp/stamps2.html',{'product':product})
 def contact_us_view(request):
     if request.method=='POST':
         fullname=request.POST.get('fullname','')
@@ -28,7 +32,17 @@ def contact_us_view(request):
         return HttpResponseRedirect('/contact')
 
     return render(request, 'printapp/contact.html')
+def contact_us_2_view(request):
+    if request.method=='POST':
+        fullname=request.POST.get('fullname','')
+        email=request.POST.get('email','')
+        phone=request.POST.get('phone','')
+        message=request.POST.get('message','')
+        contact=Contactform(fullname=fullname,email=email,phone=phone,message=message)
+        contact.save()
+        return HttpResponseRedirect('/contactus')
 
+    return render(request, 'printapp/contactus.html')
 def about_us_view(request):
    
 
