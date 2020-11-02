@@ -1,30 +1,54 @@
 {%extends 'printapp/base.html'%}
 <!DOCTYPE html> {%load static%}{%block title_block%}PK chitrography{%endblock%}{%block auth%}
-<div class="ml-auto my-2 my-lg-0">
-    <a href="/accounts/logout/"><button class="btn btn-dark btn-sm rounded-pill">Logout</button></a>
-</div>
-{%endblock%} {%block content%} <br>
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container">
+        <a class="navbar-brand" href="/home/">
+            <img src="{%static 'pkseneterpriselogo.png'%}" alt="" width="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-<br>
-<div class="container">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/#shopping">Home</a></li> &nbsp;
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-lg-5 mt-3 mt-lg-0">
+                <li class="nav-item dropdown active">
+                    <a class="nav-link " href="/home/" id="navbarDropdown">Home</a>
 
-            <li class="breadcrumb-item active" aria-current="page">Stamps</li>
-        </ol>
-    </nav>
-    <div class="row row-cols-2 row-cols-md-5" style="margin-top:40px ; margin-bottom:40px ">
-        {%if product%}{%for p in product%}
-        <div class="col mb-4">
-            <div class="carde h-100">
-                <img src="{{p.productimage.url}}" class="card-img-top" alt="...">
-                <div class="card-bodye">
-                    <h5 class="card-titlee">{{p.name}}</h5>
-                    <p class="card-text">{{p.price}}</p>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contactus">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+
+
+            </ul>
+            <div class="ml-auto my-2 my-lg-0">
+                <a href="/accounts/logout/"><button class="btn btn-dark btn-sm rounded-pill">Logout</button></a>
             </div>
-        </div>{%endfor%}{%endif%}
+            {%endblock%} {%block content%} <br>
 
-    </div>
-</div> {%endblock%}
+            <br>
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/#shopping">Home</a></li> &nbsp;
+
+                        <li class="breadcrumb-item active" aria-current="page">Stamps</li>
+                    </ol>
+                </nav>
+                <div class="row row-cols-2 row-cols-md-5" style="margin-top:40px ; margin-bottom:40px ">
+                    {%if product%}{%for p in product%}
+                    <div class="col mb-4">
+                        <div class="carde h-100">
+                            <img src="{{p.productimage.url}}" class="card-img-top" alt="...">
+                            <div class="card-bodye">
+                                <h5 class="card-titlee">{{p.name}}</h5>
+                                <p class="card-text">{{p.price}}</p>
+                            </div>
+                        </div>
+                    </div>{%endfor%}{%endif%}
+
+                </div>
+            </div> {%endblock%}

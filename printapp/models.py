@@ -22,4 +22,9 @@ class Contactform(models.Model):
     
 
 
+class emailsubscribbed(models.Model):   
+    email=models.EmailField()
+    time=models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering=('-time',)
     

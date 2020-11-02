@@ -1,10 +1,16 @@
 from django.shortcuts import render,HttpResponseRedirect
-from .models import stamp,Contactform
+from .models import stamp,Contactform,emailsubscribbed
 from django.contrib.auth.decorators import login_required 
 from .forms import SignUpForm
 # Create your views here.
 def main_view(request):
-    
+    if request.method=='POST':
+        email=request.POST.get('email','')
+        contact=emailsubscribbed(email=email)
+        contact.save()
+        return HttpResponseRedirect('/')
+
+
     return render(request, 'printapp/index.html')
 
 def main_view2(request):

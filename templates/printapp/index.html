@@ -352,15 +352,19 @@
                 </div>
                 <div class="col-md-6 col-lg-4 py-3 ">
                     <h5 class="mb-3 ">Subscribe</h5>
-                    <p>Get some offers, news, or update features of application</p>
-                    <form method="POST ">
-                        <div class="input-group ">
-                            <input type="text " class="form-control " placeholder="Your email.. ">
+                    <p>Get some offers, news, or update features of application</p>{%if form.is_valid%}
+
+                    <p>Thanks, Now onword you will get every updates, all offers and discounts</p>
+                    {%else%}
+                    <form method="POST">
+                        <div class="input-group ">{%csrf_token%}
+                            <input type="text " class="form-control " id="email" placeholder="Your email.. " name="email">
                             <div class="input-group-append ">
                                 <button type="submit " class="btn btn-primary "><span class="mai-send "></span></button>
                             </div>
                         </div>
                     </form>
+                    {%endif%}
 
                     <!-- Social Media Button -->
                     <div class="mt-4 ">
