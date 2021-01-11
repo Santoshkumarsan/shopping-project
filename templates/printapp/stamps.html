@@ -40,8 +40,10 @@
                         <li class="breadcrumb-item active" aria-current="page">Stamps</li>
                     </ol>
                 </nav>
+
                 <div class="row row-cols-2 row-cols-md-5" style="margin-top:40px ; margin-bottom:40px ">
-                    {%if product%}{%for p in product%}
+                    {%if post%}{%for p in post%}
+                    <!-- <a href="p.get_absolute_url"> -->
                     <div class="col mb-4">
                         <div class="carde h-100">
                             <img src="{{p.productimage.url}}" class="card-img-top" alt="...">
@@ -50,7 +52,9 @@
                                 <p class="card-text">{{p.price}}</p>
                             </div>
                         </div>
-                    </div>{%endfor%}{%endif%}
-
+                    </div>
+                    <!-- </a>-->
+                    {%endfor%}{%endif%}
                 </div>
-            </div> {%endblock%}
+            </div>
+        </div> {%endblock%}

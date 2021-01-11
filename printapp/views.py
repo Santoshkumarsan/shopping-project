@@ -1,9 +1,19 @@
-from django.shortcuts import render,HttpResponseRedirect
-from .models import stamp,Contactform,emailsubscribbed
+from django.shortcuts import render,HttpResponseRedirect,get_object_or_404,get_list_or_404
+from .models import stamp,Contactform,emailsubscribbed,Category
 from django.contrib.auth.decorators import login_required 
 from .forms import SignUpForm
+from django.utils import timezone 
+from django.conf import settings
+
+
 # Create your views here.
+def stamp_detail_view(request,year,month,day,post):
+    post=get_list_or_404(stamp,slug=post,publish__year=year,publish__month=month,publish__day=day)
+    return render(request,'printapp/stamps.html',{'post':post})
+
+
 def main_view(request):
+    product=Category.objects.all()
     if request.method=='POST':
         email=request.POST.get('email','')
         contact=emailsubscribbed(email=email)
@@ -11,16 +21,17 @@ def main_view(request):
         return HttpResponseRedirect('/')
 
 
-    return render(request, 'printapp/index.html')
+    return render(request, 'printapp/index.html',{'product':product})
 
 def main_view2(request):
+    product=Category.objects.all()
     
-    return render(request, 'printapp/index-2.html')
+    return render(request, 'printapp/index-2.html',{'product':product})
 
-def stamps_view(request):
-    product=stamp.objects.all()
+def stamps_view(request,id,slug):
+    #post=get_object_or_404(stamp,slug=post)
+    product=stamp.objects.get(pk=id)
    
-
     return render(request, 'printapp/stamps.html',{'product':product})
 def stamps_view_2(request):
     product=stamp.objects.all()

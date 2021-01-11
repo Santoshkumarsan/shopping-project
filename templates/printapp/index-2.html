@@ -51,38 +51,27 @@
         </div>
     </div>
 </div>
-
 <div id="shopping" class="container">
 
     <div class="card-deck row row-cols-2 row-cols-md-4" style="margin-top: 90px; ">
 
-
+        {%if product%} {%for p in product%}
 
 
         <div class="card col col-lg-3 col-sm-3 col-xs-3 " style="margin-top: 20px;">
             <div class="card-body ">
-                <a href="/stamp2"> <img src="{%static 'img\clients\hand_stamp.jpg'%}  " class="card-img-top " alt="... ">
+
+                <a href="/stamp"> <img src="{{p.productimage.url}}  " class="card-img-top " alt="... ">
 
                     <div class="card-footer ">
 
-                        <h5 class="card-title ">Stamps</h5>
-                        <small class="text-muted "> &nbsp;&nbsp;Rs: 150-500</small>
+                        <h5 class="card-title ">{{p.name}}</h5>
+                        <small class="text-muted "> &nbsp;Rs:{{p.pricerange}}</small>
                     </div>
                 </a>
             </div>
-        </div>
-        <div class="card col col-lg-3 col-sm-3 col-xs-3" style="margin-top: 20px;">
-            <div class="card-body ">
-                <a href="/T-shirts"> <img src="{%static 'img\clients\t-shirts.png'%}  " class="card-img-top " alt="... ">
+        </div>{%endfor%}{%endif%}
 
-                    <div class="card-footer ">
-
-                        <h5 class="card-title ">Printed T-shirts</h5>
-                        <small class="text-muted "> &nbsp;&nbsp;Rs: 200-1000</small>
-                    </div>
-                </a>
-            </div>
-        </div>
     </div>
 </div>
 {%endblock%}
