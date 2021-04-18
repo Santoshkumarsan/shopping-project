@@ -18,15 +18,7 @@ class Category(models.Model):
         unique_together = ('slug', 'parent',)    
         verbose_name_plural = "categories"     
 
-    def __str__(self):                           
-        full_path = [self.name]                  
-        k = self.parent
-        while k is not None:
-            full_path.append(k.name)
-            k = k.parent
-        return ' -> '.join(full_path[::-1])
-    def get_absolute_url(self):
-        return reverse('product_detail',args=[self.slug])
+
 
 
 #class Main_model(models.Model):
@@ -43,9 +35,7 @@ class stamp(models.Model):
         ordering=('-publish',)
     def __str__(self):
         return self.name
-    def get_absolute_url(self):
-        return reverse('post_detail',args=[self.publish.strftime('%y'),self.publish.strftime('%m'),self.publish.strftime('%d'),self.slug])
-            #insted of public.year i use here strftime(%y0) 
+   
 class Contactform(models.Model):
     fullname=models.CharField(max_length=64,default="")
     email=models.EmailField()

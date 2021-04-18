@@ -4,12 +4,29 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm
 from django.utils import timezone 
 from django.conf import settings
+from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 
 
 # Create your views here.
-def stamp_detail_view(request,year,month,day,post):
-    post=get_list_or_404(stamp,slug=post,publish__year=year,publish__month=month,publish__day=day)
-    return render(request,'printapp/stamps.html',{'post':post})
+# def stamp_detail_view(request,year,month,day,post):
+#     post=get_list_or_404(stamp,slug=post,publish__year=year,publish__month=month,publish__day=day)
+#     return render(request,'printapp/stamps.html',{'post':post})
+    # print(post)
+
+
+
+
+
+class stamp_detail_view(DetailView):
+    model = stamp
+    template_name='printapp/stamp_details.html'
+    context_object_name = 'con'
+
+class list_view(ListView):
+    model = stamp
+    template_name='printapp/indexlist.html'
+    context_object_name = 'my_fav'
 
 
 def main_view(request):
@@ -28,9 +45,9 @@ def main_view2(request):
     
     return render(request, 'printapp/index-2.html',{'product':product})
 
-def stamps_view(request,id,slug):
+def stamps_view(request,id):
     #post=get_object_or_404(stamp,slug=post)
-    product=stamp.objects.get(pk=id)
+    product=stamp.objects.get(Pk=id)
    
     return render(request, 'printapp/stamps.html',{'product':product})
 def stamps_view_2(request):

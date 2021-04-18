@@ -81,25 +81,27 @@
 
         <div class="card-deck row row-cols-2 row-cols-md-4" style="margin-top: 90px; ">
 
-            {%if product%}{%for p in product%}
+            {%for i in my_fav%}
 
 
             <div class="card col col-lg-3 col-sm-3 col-xs-3 " style="margin-top: 20px;">
 
                 <div class="card-body ">
+
                     <!-- <a href="p.get_absolute_url">-->
-                    <a href="/stamp/">
-                        <img src="{{p.productimage.url}}  " class="card-img-top " alt="... ">
+
+                    <a href="{% url 'stampdetails' i.id %}">
+                        <img src="{{i.productimage.url}}  " class="card-img-top " alt="... ">
 
                         <div class="card-footer ">
 
-                            <h5 class="card-title ">{{p.name}}</h5>
-                            <small class="text-muted "> &nbsp;Rs:{{p.pricerange}}</small>
+                            <h5 class="card-title ">{{i.name}}</h5>
+                            <small class="text-muted "> &nbsp;Rs:{{i.price}}</small>
                         </div>
                     </a>
                 </div>
             </div>
-            {%endfor%}{%endif%}
+            {%endfor%}
 
         </div>
     </div>
